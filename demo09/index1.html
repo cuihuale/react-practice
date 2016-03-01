@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div>双向绑定6667</div>
+    <div id="example"></div>
+    <script type="text/babel">
+      var ShuangXiang = React.createClass({
+        getInitialState:function(){
+          return {content:"hello"};
+        },
+        handleChange:function(event){
+          this.setState({content:event.target.value});
+          console.log(event)
+        },
+        render:function(){
+          return(
+            <div>
+              <input type="text" onChange={this.handleChange} value={this.state.content} />
+              <p>{this.state.content}</p>
+            </div>
+          );
+        }
+      });
+      ReactDOM.render(
+        <ShuangXiang />,
+        document.getElementById('example')
+      )
+    </script>
+  </body>
+</html>

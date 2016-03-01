@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo02</title>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+</head>
+<body>
+	<div id="container"></div>
+	<script type="text/babel">
+		var arr = [<h1>this is h1</h1>,<p>this is p</p>]
+		ReactDOM.render(
+			<div>
+				{arr}
+			</div>,
+			document.getElementById('container')
+		)
+	</script>
+</body>
+</html>

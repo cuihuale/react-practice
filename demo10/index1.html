@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var Font = React.createClass({
+        getInitialState:function(){
+          return {size:10};
+          var that = this;
+        },
+
+        componentDidMount:function(){
+          setInterval(function(){
+            var fsize = this.state.size;
+            fsize+=10;
+            if(fsize>100){
+              fsize = 10;
+            }
+            this.setState({size:fsize});
+          }.bind(this),100);
+        },
+
+        render:function(){
+          return <p style={{fontSize:this.state.size}}>测试的几个字</p>;
+        }
+      })
+      ReactDOM.render(
+        <Font />,
+        document.getElementById('example')
+      )
+    </script>
+  </body>
+</html>

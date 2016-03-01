@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <style>
+      p{
+        color:lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var HaveYouClick = React.createClass({
+        getInitialState:function(){
+          return {clicked:false};
+        },
+        handleClick:function(){
+          this.setState({clicked: !this.state.clicked});
+        },
+        render:function(){
+          var text = this.state.clicked?'have':'haven\'t';
+          return (
+            <p onClick={this.handleClick}>you {text} clicked!</p>
+          );
+        }
+      });
+      ReactDOM.render(
+        <HaveYouClick />,
+        document.getElementById('example')
+      )
+    </script>
+  </body>
+</html>

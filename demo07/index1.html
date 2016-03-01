@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var common = {
+        fun1 : function(){
+          alert('this is fun1 in common');
+        }
+      }
+      var GetInput = React.createClass({
+        handleClick:function(event){
+          alert('fff')
+        },
+        render:function(){
+          return (
+            <div>
+            {/*这里的onclick要写成onClick*/}
+              <input type="text" placeholder="input something hier" />
+              <button onClick={common.fun1}>this is button</button>
+            </div>
+          )
+        }
+      });
+      ReactDOM.render(
+        <GetInput />,
+        document.getElementById('example')
+      )
+    </script>
+  </body>
+</html>

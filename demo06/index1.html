@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo04</title>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+</head>
+<body>
+	<div id="container"></div>
+	<script type="text/babel">
+		var x = 1234;
+		var Num = React.createClass({
+			render:function(){
+				return <h1>Hi~! this is {this.state.x}</h1>;
+			}
+		})
+		ReactDOM.render(
+			<Num />,
+			document.getElementById('container')
+		)
+	</script>
+</body>
+</html>
